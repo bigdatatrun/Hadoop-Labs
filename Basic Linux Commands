@@ -1,0 +1,95 @@
+Aim: The aim of this document is to describe various Linux commands
+
+Commands	How To Use			Explanation
+--------  ----------      -----------
+
+
+pwd		pwd		Present Working Directory
+
+	
+ls		ls /directory path		List files
+		    ex: ls /home/cloudera		
+
+	
+	ls –l		ls –l		Long list all files and	directories	
+	      ex:ls -l			
+	   	‘d’ Indicates Directory	
+    	‘-‘ Indicates File	
+
+ls –a		ls –a		Listing all hidden files and directories	
+	      ex: ls –a			
+
+
+mkdir		mkdir /new_directory_path		Create directory
+		    eg: mkdir		
+		/home/cloudera/Desktop/new_directory		
+	
+
+		rmdir		rmdir /directory_path				Delete directory	
+		        ex: rmdir /home/cloudera/Desktop/directory					
+	
+	ln	ln file_path /destination_directory_path			Link files
+	           ex: ln student /home/cloudera/Desktop				
+	
+	cd		cd directoryname				To change the directory	
+	    	ex: cd cloudera					
+	
+	cd ..	cd ..			To go parent directory
+	
+	
+ cd ~		cd ~		To go home directory
+
+
+ cd /	cd /	To go root directory
+
+
+
+
+
+	cp	cp src_file_path		Copy files   /destination_directory_path		
+		ex: cp file1 /home/cloudera/Desktop		
+	
+	mv	mv src _file_path/destination_dir._path		Renames a file or moves it from one directory to another directory
+		ex: mv myfile.txt /newdirectory		
+		
+		mv current_filename new_filename		
+		ex: mv computer.txt computer_hope.txt
+		
+	rm	rm file_path		Delete files
+		ex: rm /home/cloudera/Desktop/file_name		
+	
+
+cat		cat /file_path		View files
+		ex: cat /home/cloudera/file_name		
+
+
+nl		nl /file_path		Number lines
+		ex: nl studentRoll		
+
+
+gedit	gedit /file_path	Text Editor
+	ex: gedit studentRoll	
+
+stat	stat /file_path		Display file
+	ex: stat studentRoll		attributes(properties)
+			
+
+wc	wc /file_path	Count bytes/words/lines
+	ex: wc studentRoll	
+
+
+chown	chown user_name file_path		Change file owner
+	ex: chown cloudera /home/cloudera/Desktop/README.txt		
+	
+
+chgrp		chgrp group_name /file_path		Change file group
+		ex: chgrp admin	/home/cloudera/Desktop/README.txt		
+
+
+
+ifconfig		ifconfig		Set/display network
+	                      information/ Ip address
+
+
+chattr	sudo chattr +i/-i /file_path	Change advanced file
+	ex: sudo chattr +i	attributes /home/cloudera/Desktop/README.txt	
