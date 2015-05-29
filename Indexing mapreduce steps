@@ -1,0 +1,94 @@
+Aim: The aim of this exercise is to find the specific rack number the given book contains at
+department racks in central library using the cloudera hadoop Quickstart vm CDH 5.3 . Building
+driver code for job configuration, Map code for mapper and reduce code for reducer then
+finally running it on your local machine.
+
+
+Sample Input and Output Data:
+Input:
+Here we are giving one directory having various files of engineering sections and in each file
+having respective department subjects. Each line in a file treated as library rack.
+
+Similarly we need to create four more files with different departments and subjects
+respectively.
+
+Output:
+Here we are getting indexing data having subject name which is available in different
+departments where it is located.
+
+
+Procedure for Library Index MapReduce Program Creation and Running:
+Note: Refer running first MapReduce job lab manual for similar steps.
+Step 1: Open the VMware Workstation from desktop in your computer. Double click on vmware
+workstation logo.
+Step 2: Click on Open a Virtual Machine.
+Step 3: Choose the cloudera Quickstart vm from the specified folder which you extracted
+previously and Click Open button.
+Step 4: Click on “Power on this virtual machine “and then wait until Cent OS booting will
+complete (this will take few minutes).
+Step 5: Minimize the Mozilla Firefox browser and open the pre-installed eclipse IDE from guest
+Cent OS by double clicking the eclipse icon on desktop.
+Step 6: Eclipse IDE will open. It will take little time.
+Step 7: Maximize the eclipse window if it is small. Create new project go to Workspace in
+eclipse (Below Package Explorer) Right click ?New?Java project.
+Step 8: You will get “New Java Project” window give “Word Count Job” in project name field
+(you can give any name relevant to your project) then Click on Finish button.
+Step 9: “Word Count Job” Project package is created in eclipse workspace. Click arrow button at
+left side of project name to see the source code and added libraries.
+
+Step 10: Adding Jar files
+i.Right click on Project name ?Build Path ?Configure Build Path.
+ii. Click on Libraries menu in properties for WordCount window then click on “Add External jars”
+button.
+iii. Click on FileSystem at left side in JAR Selection window then enter in “usr” folder ? lib
+?hadoop folder one by one.
+IV. Select all the .jar files in hadoop folder and click on Ok button as shown below.
+V. You will get Reference Library in eclipse workspace and click small arrow at left side to see all
+jar files as shown in screen shot below.
+
+Step 11: Creating class files
+i. We need to create three class files such as Driver code, Mapper code and Reducer
+Code.
+Right click on src folder below to WordCount project folder in eclipse workspace.
+Goto New ?Click on class.
+ii. You will see “New Java Class” window, there type “WordCount” in Name field then
+click Finish button. You can see in below screen.
+iii. You can see class files in eclipse workspace.
+iv. Similarly create two more classes with WordMapper, WordReducer class names by
+following previous step as shown below.
+
+Step 12: Write Driver code, Mapper code and Reducer code in respective java classes for Library
+Indexing MapReduce job in Java Programming by importing all required packages.
+
+Step 13: Creating Jar file for running word count job.
+We need to create jar file for running Indexing MapReduce job as mapreduce processing.
+i. Right click on project name then move on Export option and click it.
+ii. You will get export window there expand java folder and then click on “JAR file”
+option then click Next button.
+iii. You will see the JAR Export window there type li.jar ( jar file name) in “JAR file” field
+then click “Finish” button.
+iv. Jar file (li.jar) will be created in home directory workspace by default i.e
+/home/cloudera/wordspace.
+
+Step 14: Running Library Indexing MapReduce Job
+Before running MapReduce job we need to create input files in specific directory in our local
+system then we need to send input directory to HDFS from local system.
+
+i. Creating Directory in local file system from terminal.
+Command: mk dir Indexinput
+Below screen shot makes it clear.
+Note: Local System default home directory is /home/cloudera
+
+ii. Sending inputindex directory to Hdfs
+Screen shot shown below.
+
+iii. Running MapReduce Job
+
+Command: hadoop jar li.jar IndexDriver /user/indexinput indexoutput
+Below Screen shot makes it clear.
+
+Output of the MapReduce Job:
+Ouput of the mapreduce job see in terminal by using cat
+command.
+
+MapReduce Job for Indexing successfully completed.
