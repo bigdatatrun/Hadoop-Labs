@@ -1,0 +1,116 @@
+
+Command to find the Version of Hadoop:
+
+
+Command: hadoop version
+
+LS command:
+
+Displays List of Files and Directories in HDFS file Path
+Command: hadoop dfs –ls /
+
+
+MKDIR command:
+
+It creates the directory in HDFS
+Syntax: hdfs dfs –mkdir /directory_name
+Command: hdfs dfs –mkdir /bigdata
+
+DU command:
+Displays the summary of file lengths.
+
+Syntax: hdfs dfs –du –s /path/to/file_in_hdfs
+Command: hdfs dfs –du –s /user/cloudera/HdfsHello
+Note: Here HdfsHello is a file that exists in HDFS in the directory cloudera
+
+TOUCHZ command:
+
+Create a file in HDFS with file size 0 bytes Syntax: hdfs dfs –touchz /directory/filename
+Command: hdfs dfs –touchz /user/cloudera/sampledata.
+
+Note: Here we are trying to create a file named “sampledata” in the directory ‘cloudera’ of hdfs with file size 0 bytes.
+Use the du command to check the file size
+Command: hdfs dfs –du –s /user/cloudera/sampledata
+
+CAT Command:
+
+Copies source paths to stdout.
+Syntax: hdfs dfs –cat /path/to/file_in_hdfs
+
+Command: hdfs dfs –cat /user/cloudera/HdfsHello
+Note: Here HdfsHello is a file that exists in HDFS in the directory /user/cloudera
+
+Cat > Command:
+
+This command is used to create file in specified directory or in default home directory.
+
+Syntax: cat > <filename> (or) cat > <filepath with new filename>
+
+Command: cat > hadooptraining
+
+Note: After typing text in file press “ctrl + d” for saving and exiting from file.
+
+Cat >> Command:
+
+This command is used to append the text from existing file text.
+
+Syntax: cat >> <filename>
+
+Command: cat >> hadooptrianing
+
+Note: After typing text in file press “ctrl + d” for saving and exiting from file.
+
+TEXT command:
+
+Takes a source file and outputs the file in text format.( Same as Cat command ) Syntax: hdfs dfs –text /path/to/file_in_hdfs
+Command: hdfs dfs –text /user/cloudera/HdfsHello
+Note: Here HdfsHello is a file that exists in HDFS in the directory /user/cloudera
+
+copyFromLocal command:
+
+Copy the file from Local file system to HDFS. Syntax: hdfs fs -copyFromLocal <localsrc> URI
+Command: hdfs dfs –copyFromLocal /home/cloudera/hadooptraining /user/cloudera
+
+Note: Here hadooptraining is the file present in the local directory - /home/cloudera
+
+
+copyToLocal command:
+
+Copy the file from HDFS to Local File System.
+Syntax: hdfs fs -copyToLocal URI <localdst>
+
+Command: hdfs dfs –copyToLocal HdfsHello /home/cloudera
+Note: Here HdfsHello is a file present in default hdfs directory ie “/user/cloudera” of HDFS
+
+put command:
+
+Copy single source, or multiple srcs from local file system to the destination file system. Syntax: hdfs fs -put <localsrc> ... <dst>
+Command: hdfs dfs –put hadoop /user/cloudera
+
+Note: copyFromLocal is similar to put command, except that the source is restricted to a local file reference
+
+GET command:
+
+Copy files from hdfs to the local file system.
+Syntax: hadoop fs -get [-ignorecrc] [-crc] <src> <localdst>
+
+Command: hdfs dfs –get bigdata /home/cloudera
+
+Note: copyToLocal is similar to get command, except that the destination is restricted to a local file reference.
+
+COUNT command:
+
+Count the number of directories, files and bytes under the paths that match the specified file pattern.
+Command: hdfs dfs –count /user/cloudera
+
+RM command:
+
+Remove the file from HDFS.
+Syntax: hdfs dfs –rm /path/to/file_in_hdfs
+Command: hdfs dfs –rm sampledata
+
+RMR command:
+
+Remove the directory to HDFS
+Syntax: hdfs dfs –rmr /path/to/directory_in_hdfs
+Command: hdfs dfs –rmr bigdata
