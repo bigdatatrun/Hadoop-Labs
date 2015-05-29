@@ -1,0 +1,33 @@
+import java.io.IOException;
+
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.FileSplit;
+import org.apache.hadoop.mapred.MapReduceBase;
+import org.apache.hadoop.mapred.Mapper;
+import org.apache.hadoop.mapred.OutputCollector;
+import org.apache.hadoop.mapred.Reporter;
+
+
+public class IndexMapper extends MapReduceBase implements Mapper<Text,Text,Text,Text>{
+
+	
+	public void map(Text key, Text value, OutputCollector<Text, Text> out,
+			Reporter r) throws IOException {
+		
+		FileSplit fs= (FileSplit)r.getInputSplit();
+		Path p=fs.getPath();
+		String fname= p.getName();
+		
+		String s=value.toString();
+		
+		for(String word:s.split(",")){
+			
+			if(word.length()>0){
+				out.collect(new Text(word), new Text(fname+"@"+key));
+				
+			}
+		}
+		
+	}
+}
